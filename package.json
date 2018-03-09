@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/vborodii/mapr-test#readme",
   "dependencies": {
-    "mapr-node-bindings": "git+ssh://git@github.com/vborodii/maprdb-node-client#dev"
+    "mapr-node-bindings": "git+ssh://git@github.com/vborodii/maprdb-node-client.git#dev"
   }
 }
