@@ -25,8 +25,9 @@ function createTable() {
 }
 
 function insertDocument() {
+    const docId = 123;
     const table = store.getStore(tableName)
-    const doc = new Document(123)
+    const doc = new Document(docId)
       .setField('test_int', 123)
       .setField('test_date', new ODate(1518689532))
       .setField('test_interval', new OInterval(172800000))
@@ -40,6 +41,13 @@ function insertDocument() {
 
     table.insertOrReplace(doc.toJSON(), tableName, (err, result) => {
         console.log('insertOrReplace', {err, result})
+        findDocument(docId)
+    })
+}
+
+function findDocument(id) {
+    store.findById(tableName, id, (err, result) => {
+        console.log('findById', {err, result})
     })
 }
 
